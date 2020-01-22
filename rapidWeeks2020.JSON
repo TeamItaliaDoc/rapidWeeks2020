@@ -14,8 +14,8 @@
 {"settimana":1, "win":"DirkFlasche", "lost":"cavaliereyedi"},
 {"settimana":1, "win":"cavaliereyedi", "lost":"TheMoonlightKnight"},
 {"settimana":1, "win":"kmoreteam", "lost":"tiziano58"},
-{"settimana":1, "win":"saurosolw", "lost":"southitaliy"},
-{"settimana":1, "win":"southitaliy", "lost":"saurosol"},	 
+{"settimana":1, "win":"saurosol", "lost":"southitaly"},
+{"settimana":1, "win":"southitaly", "lost":"saurosol"},	 
 {"settimana":1, "win":"DirkFlasche", "lost":"88arf"},
 {"settimana":1, "win":"kmoreteam", "lost":"Sandro2116"},
 {"settimana":1, "win":"saurosol", "lost":"Tulpicanistan"},
@@ -26,3 +26,4 @@
   
 {"settimana":1, "win":"", "lost":""}  
 ]}
+
