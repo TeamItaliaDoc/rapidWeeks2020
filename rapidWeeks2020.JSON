@@ -1,13 +1,4 @@
-{"correzioni":[
-    {"settimana":1,"win":"tulpicanistan", "lost":"cavaliereyedi"},
-    {"settimana":1,"win":"dirkflasche", "lost":"tulpicanistan"},
-    {"settimana":0,"win":"", "lost":""},
-    {"settimana":0,"win":"", "lost":""},
-    {"settimana":0,"win":"", "lost":""},
-    {"settimana":0,"win":"", "lost":""}
-],
-
-"partite":[
+{"partite":[
     {"settimana":1, "win":"cavaliereyedi", "lost":"saurosol"},
     {"settimana":1, "win":"cavaliereyedi", "lost":"leftlover"},
     {"settimana":1, "win":"cavaliereyedi", "lost":"ytoong"},
@@ -78,6 +69,20 @@
     {"settimana":1, "giorno":"5", "win":"cavaliereyedi", "lost":"warnefrit"},
     {"settimana":1, "giorno":"5", "win":"tulpicanistan", "lost":"sandro2116"},
     {"settimana":1, "giorno":"5", "win":"ytoong", "lost":"saurosol"},
+    
+    {"settimana":1, "giorno":"6", "win":"dirkflasche", "lost":"ytoong"},
+    {"settimana":1, "giorno":"6", "win":"ytoong", "lost":"cavaliereyedi"},
+    {"settimana":1, "giorno":"6", "win":"cavaliereyedi", "lost":"ytoong"},
+    {"settimana":1, "giorno":"6", "win":"kmoreteam", "lost":"babilonia"},
+    {"settimana":1, "giorno":"6", "win":"dirkflasche", "lost":"dag_stinner"},
+    {"settimana":1, "giorno":"6", "win":"southitaly", "lost":"cavaliereyedi"},
+    {"settimana":1, "giorno":"6", "win":"sandro2116", "lost":"themoonlightknight"},
+    {"settimana":1, "giorno":"6", "win":"cavaliereyedi", "lost":"tulpicanistan"},
+    {"settimana":1, "giorno":"6", "win":"cavaliereyedi", "lost":"kmoreteam"},
+    {"settimana":1, "giorno":"6", "win":"fulljoker", "lost":"tulpicanistan"},
+    {"settimana":1, "giorno":"6", "win":"tulpicanistan", "lost":"cavaliereyedi"},
+    
+    
     
     {"settimana":1, "win":"", "lost":""}  
 ],
