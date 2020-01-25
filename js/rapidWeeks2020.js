@@ -1,5 +1,9 @@
 ﻿var calcolaClassificaRun = false;
-
+var dataGenerale = {};
+var U1500 = true;
+var U1400 = true;
+var U1300 = true;
+var U1200 = true;
 
 //https://api.chess.com/pub/tournament/csp-inverno-2018-2019-girone-1/1/1
 
@@ -19,223 +23,174 @@ function elabora() {
             }
         }
         
+        //Salvo per usarlo in callolaClassifica
+        dataGenerale = data.generale;
+
         //Ricerco elo e stampo classifica giocatori
         getAvatar();
 
-        //Calcolo classifica generale
-        //calcolaClassifica();
     });
 
 };
 
 //calcolo classifica team
-/*
 function calcolaClassifica()
 {
-    //calcolo punti spareggio
-    //  SENZA PENALITA'
-    /*  NON USATO
-    for (var nameTeam in teams)
-    {
-        for (var i in teams[nameTeam].teamVinte)
-            teams[nameTeam].puntiSpareggio += teams[teams[nameTeam].teamVinte[i]].punti;
-        for (var i in teams[nameTeam].teamPatte)
-            teams[nameTeam].puntiSpareggio += teams[teams[nameTeam].teamPatte[i]].punti / 2;
-    }
-    */
 
-    /*
-    //Tolgo dai punti le penalità per calcolare la classifica
-    for (var nameTeam in teams)
-    {
-        teams[nameTeam].puntiMatchRisolti = teams[nameTeam].puntiConclusi;
-        teams[nameTeam].puntiConclusi -= teams[nameTeam].penalità;
+    for (var i in dataGenerale) {
+        var generale = dataGenerale[i];
+        if (generale.n1 != '') {
+            giocatori[generale.n1].punti[0] += 10;
+            giocatori[generale.n1].generale.partite[generale.settimana] = 10;
+            giocatori[generale.n2].punti[0] += 6;
+            giocatori[generale.n2].generale.partite[generale.settimana] = 6;
+            giocatori[generale.n3].punti[0] += 4;
+            giocatori[generale.n3].generale.partite[generale.settimana] = 4;
+            giocatori[generale.n4].punti[0] += 3;
+            giocatori[generale.n4].generale.partite[generale.settimana] = 3;
+            giocatori[generale.n5].punti[0] += 2;
+            giocatori[generale.n5].generale.partite[generale.settimana] = 2;
+            giocatori[generale.n6].punti[0] += 1;
+            giocatori[generale.n6].generale.partite[generale.settimana] = 1;
+        }
     }
+
+    //???????????? fare for
+    settimana = 0;
+
     //Imposto posizione e salvo
-    var gruppo = '';
-    var max = -1;
-    var maxSpareggio = 0;
+    var username = '';
+    var max = 0;
     var posizione = 0;
-    var oldMax = -1;
-    var oldSpareggio = -1;
-    var nPareggi = 0;
-    var puntiClassifica = 0;
-    while (max > -100)
+    while (max > -1)
     {
-        max = -200;
-        maxSpareggio = -1;
-        for (var i in teams)
+        max = -1;
+        for (var i in giocatori)
         {
-            //Scelgo i punti (da conclusi oi in corso)
-            puntiClassifica = teams[i].puntiConclusi;
-
-            if ((teams[i].posizione == 0) && (puntiClassifica > max || (puntiClassifica == max) && teams[i].puntiSpareggio > maxSpareggio)) {
-                gruppo = i;
-                max = puntiClassifica;
-                maxSpareggio = teams[i].puntiSpareggio;
+            var trovato = false;
+            var direttiIndex1 = 0;
+            var direttiIndex2 = 0;
+            //Se ho giocato in questa settimana e non sono già in classifica
+            if ((giocatori[i].generale.posizione == 0) && (giocatori[i].punti[settimana] > 0)) {
+                    //se ho un punteggio maggiore
+                    if (giocatori[i].punti[settimana] > max ) {
+                        trovato = true;
+                    } else if (giocatori[i].punti[settimana] == max ) {
+                        //Controllo scontri diretti
+                        var diretti1 = 0;
+                        var index = giocatori[i].avversario[settimana].indexOf(username)
+                        if (index == -1) {
+                            diretti1 = 0;
+                            direttiIndex1 = 999;
+                        } else {
+                            diretti1 = giocatori[i].avversarioPunti[settimana][index];
+                            direttiIndex1 = giocatori[i].avversarioIndex[settimana][index];
+                        }
+                        var diretti2 = 0;
+                        index = giocatori[username].avversario[settimana].indexOf(i)
+                        if (index == -1) {
+                            diretti2 = 0;
+                            direttiIndex2 = 999;
+                        } else {
+                            diretti2 = (giocatori[username].avversarioPunti[settimana][index]);
+                            direttiIndex2 = giocatori[username].avversarioIndex[settimana][index];
+                        }
+                        if (diretti1 > diretti2) {
+                            trovato = true;
+                        } else if (diretti1 == diretti2 ) {  
+                            //controllo chi ha vinto con più avversari
+                            if (giocatori[i].avversario[settimana].length > giocatori[username].avversario[settimana].length) {
+                                trovato = true;
+                            }  else if (giocatori[i].avversario[settimana].length == giocatori[username].avversario[settimana].length) {
+                                //Controllo chi ha vinto la prima partita
+                                if (direttiIndex1 < direttiIndex2) {
+                                    trovato = true;
+                                }
+                            }
+                        }
+                    }
+                }
+                //Ho trovato un giocatore
+                if (trovato) {
+                   // posizione ++;
+                    username = i;
+                    max = giocatori[i].punti[0];
+                }
             }
-        }
-        if (max > -100) 
-        {
-            if (oldMax == max && oldSpareggio == maxSpareggio )
+        
+            //Ho un nuovo giocatore da stampare
+            if (max > -1) 
             {
-                nPareggi++;
-            } else {
                 posizione++;
-                posizione += nPareggi;
-                nPareggi = 0;
-                oldMax = max;
-                oldSpareggio = maxSpareggio;
-            }    
-            teams[gruppo].posizione = posizione;
-            //Aggiungo il team nella posizione corretta
-            classificaTeams.push(gruppo);
-        }
-    }
-
-    //Stampo la classifica
-    var url  = '';
-    var stile = '';
-    var stileTD = '';
-    var gruppoAvversario = '';
-    var risultato = '';
-    var boards = '';
-    var score1 = 0;
-    var score2 = 0;
-    var partitaConclusa = false;
-    //Riga con nomi teams    
-    var stRiga = '<tr class="classifica-nameTeam">' +
-            '<td style="background-color:gray;"></td><td style="background-color:gray;"></td><td style="background-color:gray;">' + 
-            //'</td><td style="background-color:gray;">'+
-            '</td><td style="background-color:gray;"></td></td><td style="background-color:gray;"></td></td><td style="background-color:gray;"></td>' +
-            '<td class="classifica-col1SEP"></td>'; 
-    for (var i in classificaTeams)         
-        stRiga += '<td class="classifica-nameTeam"> <a style="color:black;text-decoration: none;font-weight: normal;" href="' + teams[classificaTeams[i]].url + '" target=”_blank”> ' + teams[classificaTeams[i]].name + '</a></td>';
-    stRiga += '</tr>'
-    $("#classifica").append(stRiga);
-    //Riga con Icone    
-    stRiga = '<tr class="classifica-icon">' +
-            '<td class="classifica-icon" style="background-color:#E2E2FF;">Pos.</td> <td style="background-color:#E2E2FF;">Team</td><td style="background-color:#E2E2FF;"></td>'+
-            '<td class="classifica-icon">Punti</td>' +
-            //'<td class="classifica-icon">Tie Break</td>'+
-            '<td class="classifica-icon">Punti dai match risolti</td><td class="classifica-icon" >Penalità</td>' +
-            //'<td class="classifica-icon">Punti dai match in corso</td>' +
-            '<td class="classifica-col1SEP"></td>'; 
-    for (var i in classificaTeams)         
-        stRiga += '<td  class="classifica-icon">  <img class="classifica-avatar" src="' + teams[classificaTeams[i]].icon + '">';
-    stRiga += '</tr>'
-    $("#classifica").append(stRiga);
-    //Riga team
-    for (var i in classificaTeams)         
-    {
-        gruppo = classificaTeams[i];
-        stRiga = '<tr class="classifica-risultati">' +
-            '<td class="classifica-risultati">' + teams[gruppo].posizione + '</td>' +
-            '<td class="classifica-risultati" style="border: 0px;"> <a style="color:black;text-decoration: none;font-weight: normal;" href="' + teams[classificaTeams[i]].url + '" target=”_blank”> ' + teams[classificaTeams[i]].name + '</a></td>' +
-            '<td class="classifica-risultati" style="border: 0px;"> <img class="classifica-avatar" src="' + teams[classificaTeams[i]].icon + '"></td>' +
-            '<td class="classifica-risultati">' + teams[gruppo].puntiConclusi + '</td>' + 
-            //'<td class="classifica-risultati">' + teams[gruppo].puntiSpareggio + '</td>' +
-            '<td class="classifica-risultati">' + teams[gruppo].puntiMatchRisolti + '</td>' +
-            '<td class="classifica-risultati">' + (teams[gruppo].penalità*-1) + '</td>' +
-            //'<td class="classifica-risultati">' + teams[gruppo].puntiInCorso + '</td>' +  
-            '<td class="classifica-col1SEP" style="border: 0px;"></td>'; 
-        for (var ii in classificaTeams)         
-        {
-            gruppoAvversario  = classificaTeams[ii];
-            stile = '';
-            stileTD = '';
-            risultato = '';
-            partitaConclusa = false;
-            if  (gruppo == gruppoAvversario)
-            {
-                url = '';
-                stile = 'background-color:#b3b3b3;';
-            } else {
-                //Ricerco partita
-                boards = 0;
-                url = '';
-                for (var partita in matchs)         
-                {
-                    //team da stampare sulla riga è team1
-                    if (matchs[partita].team1 == gruppo && matchs[partita].team2 == gruppoAvversario)
-                    {
-                        url = matchs[partita].url;
-                        boards = matchs[partita].boards;
-                        score1 = matchs[partita].score1;
-                        score2 = matchs[partita].score2;
-                        partitaConclusa = matchs[partita].concluso;
-                    } 
-                    //team da stampare sulla riga è team2
-                    if (matchs[partita].team2 == gruppo && matchs[partita].team1 == gruppoAvversario)
-                    {
-                        url = matchs[partita].url;
-                        boards = matchs[partita].boards;
-                        score1 = matchs[partita].score2;
-                        score2 = matchs[partita].score1;
-                        partitaConclusa = matchs[partita].concluso;
-                    }
-                }
-
-                //Se la partita esiste
-                if (boards > 0)
-                {
-                    //Se terminata
-                    if (partitaConclusa)
-                    {
-                        //Pareggio
-                        if (score1 == score2)
-                        {
-                            risultato = '0.5 - 0.5 <BR> (' + score1 + ' - ' + score2 + ')';
-                            stileTD = 'style="background-color:#84b2ed;border: 1px solid black;"';   //PAREGGIO
-                            stile = 'color:black;font-weight: bold;';
-                        } 
-                        //Vinto team 1
-                        if (score1 > score2)
-                        {
-                            risultato = '1 - 0 <BR> (' + score1 + ' - ' + score2 + ')';
-                            stileTD = 'style="background-color:#4bc74b;border: 1px solid black;"'; //VINTO
-                            stile = 'color:black;font-weight: bold;';
-                        } 
-                        //Vinto team 2
-                        if (score1 < score2)
-                        {
-                            risultato = '0 - 1 <BR> (' + score1 + ' - ' + score2 + ')';
-                            stileTD = 'style="background-color:#f75959;border: 1px solid black;"';  //PERSO
-                            stile = 'color:black;font-weight: bold;';
-                        } 
-                    } else {
-                        //Match da terminare
-                        risultato = score1 + ' - ' + score2 + '<BR> ('+ (score1+score2) + '/' + (boards*2) + ')';
-                        //Pareggio
-                        if (score1 == score2)
-                            stile = 'color:blue;';
-                        //Vinto team 1
-                        if (score1 > score2)
-                            stile = 'color:green;';
-                        //Vinto team 2
-                        if (score1 < score2)
-                            stile = 'color:red;';
-                        stileTD = 'style="border: 1px solid black;"';  //PERSO
-                    }
-                }
+                giocatori[username].generale.posizione = posizione;
+                //Stampo il giocatore
+                stampaGenerale(username);
             }
-                    
-
-            //Scrivo valori calcolati nella cella
-            if (url == '')   //stessa squadra
-                stRiga += '<td class="classifica-risultati" style="' + stile + '"> </td>'
-            else
-               stRiga += '<td ' + stileTD + '> <a style="text-decoration: none;font-weight: normal;' + stile + ' " href="' + url +'" target=”_blank”>' + risultato + '</a></td>';
         }
-        stRiga += '</tr>'
-        $("#classifica").append(stRiga);
-    }
-
-
-
-
-    //Ricerco elo e stampo classifica giocatori
-    getAvatar();
 }
 
-*/    
+function stampaGenerale(username)
+{
+    //Visualizzo classifica
+    $("#classificaGeneraleSeparatore").attr('style', '"display":"block"');
+    $("#classificaGenerale").attr('style', '"display":"block"');
+
+    var posizioneSt = '#' +  giocatori[username].generale.posizione;
+    //controllo premi di categoria
+    //primi 3 sono assoluti
+    if (giocatori[username].generale.posizione > 3) {
+         if ((U1500) && (giocatori[username].elo < 1500)) {
+             U1500 = false;
+             posizioneSt += '<BR> 1° U1500'; 
+         } else {
+            if ((U1400) && (giocatori[username].elo < 1400)) {
+                U1400 = false;
+                posizioneSt += '<BR> 1° U1400'; 
+            } else {
+                if ((U1300) && (giocatori[username].elo < 1300)) {
+                    U1300 = false;
+                    posizioneSt += '<BR> 1° U1300'; 
+                } else {
+                    if ((U1200) && (giocatori[username].elo < 1200)) {
+                        U1200 = false;
+                        posizioneSt += '<BR> 1° U1200'; 
+                    }     
+                }
+            }
+        }            
+    }
+
+    //stampa riepilogo settimanale
+    var riepilogo = '';
+    for (var settimana=1; settimana<11; settimana++) {
+        if (giocatori[username].generale.partite[settimana] == 0)
+            riepilogo += '<td class="classifica-col4Gen"></td>'
+        else
+            riepilogo += '<td class="classifica-col4Gen">' + giocatori[username].generale.partite[settimana] +'</td>';
+    }
+
+    //stampo riga    
+    var riga = '<tr class="classifica-giocatori">' +
+        '<td class="classifica-col1">' + posizioneSt + '</td>' +  
+        '<td class="giocatori-col1SEP"></td>' + 
+        '<td class="classifica-col2">' +
+        '    <table><tr>' +
+        '        <td>' +
+        '        <img class="classifica-avatar" src="' + giocatori[username].avatar + '">' +
+        '    </td>' +
+        '    <td width=7px></td>' +
+        '    <td><div>' +
+        '            <a class="username" href="' + giocatori[username].url + '" target=”_blank”> ' + giocatori[username].displayName + '</a>' +
+        '        </div> <div>  (' + giocatori[username].elo + ') </div>' +
+        '        </td>' +    
+        '    </tr></table>' +
+        '</td>' +
+        '<td class="classifica-col3">' + giocatori[username].punti[0] +'</td>' +
+        riepilogo +
+        '</tr>';
+
+    //Stampo
+    $("#classificaGenerale").append(riga);
+
+}
+

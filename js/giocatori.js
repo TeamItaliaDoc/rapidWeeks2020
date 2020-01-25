@@ -71,7 +71,8 @@ function getEloUrl(url)
         var username = ''
         username = this.url.substr(33, this.url.length-39);
         if (data.chess_daily)
-            giocatori[username].elo = data.chess_rapid.last.rating;
+            //giocatori[username].elo = data.chess_rapid.last.rating;
+            giocatori[username].elo = data.chess_daily.last.rating;
         else
             giocatori[username].elo = 1200;    
             
@@ -87,7 +88,9 @@ function getEloUrl(url)
             calcolaClassificaGiocatoriRun = true;
 
         //Calcolo clasifica
-        calcolaClassificaGiocatori();
+        for (var settimana=0; settimana<11; settimana++) {
+            calcolaClassificaGiocatori(settimana);
+        }
 
     }).error(function(jqXhr, textStatus, error) {
         //è andato in errore ricarico i dati
@@ -110,12 +113,16 @@ function creaGiocatore(apiUsername) {
     giocatori[username].avversarioPunti = [];
     giocatori[username].avversarioIndex = [];
     giocatori[username].posizione = [];
-    for (var settimana=1; settimana<11; settimana++) {
+    giocatori[username].generale = {};
+    giocatori[username].generale.posizione = 0;
+    giocatori[username].generale.partite = [];
+    for (var settimana=0; settimana<11; settimana++) {
         giocatori[username].punti[settimana] = 0;
         giocatori[username].posizione[settimana] = 0;
         giocatori[username].avversario[settimana] = [];
         giocatori[username].avversarioPunti[settimana] = [];
         giocatori[username].avversarioIndex[settimana] = [];
+        giocatori[username].generale.partite.push(0);
     }
 }
 
@@ -136,7 +143,7 @@ function setPunti(settimana, username, avversario, iMatch)
     //Assegno punti
     giocatori[username].punti[settimana] ++;
 
-    //Segno avversari
+    //Segno avversari settimana
     var index = giocatori[username].avversario[settimana].indexOf(avversario)
     if (index == -1){
         giocatori[username].avversario[settimana].push(giocatori[avversario].displayName);
@@ -145,13 +152,20 @@ function setPunti(settimana, username, avversario, iMatch)
     } else {
         giocatori[username].avversarioPunti[settimana][index] ++;
     }
+
+    //Segno avversari generale
+    var index = giocatori[username].avversario[0].indexOf(avversario)
+    if (index == -1){
+        giocatori[username].avversario[0].push(giocatori[avversario].displayName);
+        giocatori[username].avversarioPunti[0].push(1);
+        giocatori[username].avversarioIndex[0].push(iMatch);
+    } else {
+        giocatori[username].avversarioPunti[0][index] ++;
+    }
 }
 
-function calcolaClassificaGiocatori()
+function calcolaClassificaGiocatori(settimana)
 {
-    //???????????? fare for
-    settimana = 1;
-
     //Imposto posizione e salvo
     var username = '';
     var max = 0;
@@ -222,6 +236,10 @@ function calcolaClassificaGiocatori()
             stampaGiocatore(settimana, username);
         }
     }
+
+    //Calcolo classifica generale
+    calcolaClassifica();
+
    
  }
  
@@ -258,5 +276,23 @@ function stampaGiocatore(settimana, username)
     //Stampo
     if (settimana == 1)
        $("#RW1").append(riga);
+    if (settimana == 2)
+       $("#RW2").append(riga);
+    if (settimana == 3)
+       $("#RW3").append(riga);
+    if (settimana == 4)
+       $("#RW4").append(riga);
+    if (settimana == 5)
+        $("#RW5").append(riga);
+    if (settimana == 6)
+       $("#RW6").append(riga);
+    if (settimana == 7)
+       $("#RW7").append(riga);
+    if (settimana == 8)
+       $("#RW8").append(riga);
+    if (settimana == 9)
+       $("#RW9").append(riga);
+    if (settimana == 10)
+       $("#RW10").append(riga);
 
 }
