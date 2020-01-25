@@ -112,6 +112,7 @@ function creaGiocatore(apiUsername) {
     giocatori[username].avversario = [];
     giocatori[username].avversarioPunti = [];
     giocatori[username].avversarioIndex = [];
+    giocatori[username].avversarioCorrezioni = [];
     giocatori[username].posizione = [];
     giocatori[username].generale = {};
     giocatori[username].generale.posizione = 0;
@@ -121,6 +122,7 @@ function creaGiocatore(apiUsername) {
         giocatori[username].posizione[settimana] = 0;
         giocatori[username].avversario[settimana] = [];
         giocatori[username].avversarioPunti[settimana] = [];
+        giocatori[username].avversarioCorrezioni[settimana] = [];
         giocatori[username].avversarioIndex[settimana] = [];
         giocatori[username].generale.partite.push(0);
     }
@@ -149,6 +151,7 @@ function setPunti(settimana, username, avversario, iMatch)
         giocatori[username].avversario[settimana].push(giocatori[avversario].displayName);
         giocatori[username].avversarioPunti[settimana].push(1);
         giocatori[username].avversarioIndex[settimana].push(iMatch);
+        giocatori[username].avversarioCorrezioni[settimana].push(0);
     } else {
         giocatori[username].avversarioPunti[settimana][index] ++;
     }
@@ -159,6 +162,7 @@ function setPunti(settimana, username, avversario, iMatch)
         giocatori[username].avversario[0].push(giocatori[avversario].displayName);
         giocatori[username].avversarioPunti[0].push(1);
         giocatori[username].avversarioIndex[0].push(iMatch);
+        giocatori[username].avversarioCorrezioni[settimana].push(0);
     } else {
         giocatori[username].avversarioPunti[0][index] ++;
     }
@@ -191,7 +195,7 @@ function calcolaClassificaGiocatori(settimana)
                         diretti1 = 0;
                         direttiIndex1 = 999;
                     } else {
-                        diretti1 = giocatori[i].avversarioPunti[settimana][index];
+                        diretti1 = giocatori[i].avversarioPunti[settimana][index]   + giocatori[i].avversarioCorrezioni[settimana][index];
                         direttiIndex1 = giocatori[i].avversarioIndex[settimana][index];
                     }
                     var diretti2 = 0;
@@ -200,7 +204,7 @@ function calcolaClassificaGiocatori(settimana)
                         diretti2 = 0;
                         direttiIndex2 = 999;
                     } else {
-                        diretti2 = (giocatori[username].avversarioPunti[settimana][index]);
+                        diretti2 = (giocatori[username].avversarioPunti[settimana][index])   + giocatori[username].avversarioCorrezioni[settimana][index];
                         direttiIndex2 = giocatori[username].avversarioIndex[settimana][index];
                     }
                     if (diretti1 > diretti2) {

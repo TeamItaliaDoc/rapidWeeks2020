@@ -14,6 +14,27 @@ function elabora() {
 
     $.getJSON(url,function(data){
 
+        //Imposto le correzioni
+        for (var i in data.correzioni) {
+            if (data.correzioni[i].win != '') {
+                if (! giocatori[data.correzioni[i].win]) 
+                    creaGiocatore(data.correzioni[i].win);
+                if (! giocatori[data.correzioni[i].lost]) 
+                    creaGiocatore(data.correzioni[i].lost);
+                var index = giocatori[data.correzioni[i].win].avversario[data.correzioni[i].settimana].indexOf(data.correzioni[i].lost)
+                if (index == -1){
+                    giocatori[data.correzioni[i].win].avversario[data.correzioni[i].settimana].push(giocatori[data.correzioni[i].lost].displayName);
+                    giocatori[data.correzioni[i].win].avversarioPunti[data.correzioni[i].settimana].push(0);
+                    giocatori[data.correzioni[i].win].avversarioIndex[data.correzioni[i].settimana].push(0);
+                    giocatori[data.correzioni[i].win].avversarioCorrezioni[data.correzioni[i].settimana].push(1);
+                } else {
+                    giocatori[data.correzioni[i].win].avversarioCorrezioni[data.correzioni[i].settimana][index] ++;
+                }
+            
+            }
+        }
+                
+        //Calcolo i punti
         var iMatch = 0;
         for (var i in data.partite) {
             var partita = data.partite[i];
@@ -83,7 +104,7 @@ function calcolaClassifica()
                             diretti1 = 0;
                             direttiIndex1 = 999;
                         } else {
-                            diretti1 = giocatori[i].avversarioPunti[settimana][index];
+                            diretti1 = giocatori[i].avversarioPunti[settimana][index]  + giocatori[i].avversarioCorrezioni[settimana][index];
                             direttiIndex1 = giocatori[i].avversarioIndex[settimana][index];
                         }
                         var diretti2 = 0;
@@ -92,7 +113,7 @@ function calcolaClassifica()
                             diretti2 = 0;
                             direttiIndex2 = 999;
                         } else {
-                            diretti2 = (giocatori[username].avversarioPunti[settimana][index]);
+                            diretti2 = (giocatori[username].avversarioPunti[settimana][index]) + giocatori[username].avversarioCorrezioni[settimana][index];;
                             direttiIndex2 = giocatori[username].avversarioIndex[settimana][index];
                         }
                         if (diretti1 > diretti2) {
