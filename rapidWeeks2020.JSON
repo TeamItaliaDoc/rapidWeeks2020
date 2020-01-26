@@ -1,4 +1,14 @@
-{"partite":[
+{
+    "correzioni":[
+        {"settimana":1, "win":"dirkflasche", "lost":"tulpicanistan"},
+        {"settimana":1, "win":"tulpicanistan", "lost":"cavaliereyedi"},
+        {"win":"", "lost":""},
+        {"win":"", "lost":""},
+        {"win":"", "lost":""},
+        {"win":"", "lost":""}
+    ],
+    
+    "partite":[
     {"settimana":1, "win":"cavaliereyedi", "lost":"saurosol"},
     {"settimana":1, "win":"cavaliereyedi", "lost":"leftlover"},
     {"settimana":1, "win":"cavaliereyedi", "lost":"ytoong"},
