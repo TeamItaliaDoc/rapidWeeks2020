@@ -55,7 +55,7 @@ function elabora() {
 };
 
 //calcolo classifica team
-function calcolaClassifica()
+function calcolaClassificaGenerale()
 {
 
     for (var i in dataGenerale) {
@@ -76,7 +76,7 @@ function calcolaClassifica()
         }
     }
 
-    //???????????? fare for
+    //Serve per classifica generale. Imposto 0
     settimana = 0;
 
     //Imposto posizione e salvo

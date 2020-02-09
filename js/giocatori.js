@@ -87,10 +87,15 @@ function getEloUrl(url)
             return;
             calcolaClassificaGiocatoriRun = true;
 
-        //Calcolo clasifica
-        for (var settimana=0; settimana<11; settimana++) {
+        //Calcolo clasifica per settimana
+        for (var settimana=1; settimana<11; settimana++) {
             calcolaClassificaGiocatori(settimana);
         }
+
+        //Calcolo classifica generale
+        calcolaClassificaGenerale();
+
+
 
     }).error(function(jqXhr, textStatus, error) {
         //è andato in errore ricarico i dati
@@ -109,6 +114,7 @@ function creaGiocatore(apiUsername) {
     //lo assegno quando lo trovo giocatori[username].avatar = '';
     //lo assegno quando lo trovo giocatori[username].elo = 0;
     giocatori[username].punti = [];
+    giocatori[username].puntiAvulsa;
     giocatori[username].avversario = [];
     giocatori[username].avversarioPunti = [];
     giocatori[username].avversarioIndex = [];
@@ -176,40 +182,76 @@ function calcolaClassificaGiocatori(settimana)
     var posizione = 0;
     while (max > -1)
     {
+
+        //cerco punteggio massimo e azzero punti avulsa
+        max = 0;
+        for (var i in giocatori)
+        {
+            giocatori[i].puntiAvulsa = 0;
+            //Se già stampato continuo
+            if ((giocatori[i].posizione[settimana] > 0) || (giocatori[i].punti[settimana] == 0)) 
+                continue;
+
+            if ((giocatori[i].generale.posizione == 0) && (giocatori[i].punti[settimana] > 0) && (giocatori[i].punti[settimana] > max )) {
+                max = giocatori[i].punti[settimana];
+            }
+        }
+        //Se il massimo è 0 non devo più stampare niente, esco
+        if (max == 0) 
+            break;
+
+        //Calcolo classifica avulsa per chi ha il punteggio massimo
+        for (var i in giocatori)
+        {
+            if (giocatori[i].punti[settimana] == max){
+                for (var iAvversario in giocatori) {
+                    if ((giocatori[iAvversario].punti[settimana] == max) && (i != iAvversario)){
+                        var index = giocatori[i].avversario[settimana].indexOf(iAvversario)
+                        if (index > -1)
+                            giocatori[i].puntiAvulsa += giocatori[i].avversarioPunti[settimana][index];
+                    }
+                }
+            }
+        }
+
         max = -1;
         for (var i in giocatori)
         {
+            //Se già stampato continuo
+            if ((giocatori[i].posizione[settimana] > 0) || (giocatori[i].punti[settimana] == 0)) 
+                continue;
+
             var trovato = false;
             var direttiIndex1 = 0;
             var direttiIndex2 = 0;
-            //Se ho giocato in questa settimana e non sono già in classifica
-            if ((giocatori[i].posizione[settimana] == 0) && (giocatori[i].punti[settimana] > 0)) {
-                //se ho un punteggio maggiore
-                if (giocatori[i].punti[settimana] > max ) {
+            //se ho un punteggio maggiore
+            if (giocatori[i].punti[settimana] > max ) {
+                trovato = true;
+            } else if (giocatori[i].punti[settimana] == max ) {
+                //Punteggio uguale
+
+                //Classifica tra quelli con stesso punteggio (puntiAvulsa)  
+                var puntiAvulsa1 = 0;
+                var puntiAvulsa2 = 0;
+                var index1 = giocatori[i].avversario[settimana].indexOf(username);
+                if (index1 > -1)
+                    puntiAvulsa1 = giocatori[i].puntiAvulsa  + giocatori[i].avversarioCorrezioni[settimana][index1];
+                var index2 = giocatori[username].avversario[settimana].indexOf(i);
+                if (index2 > -1)
+                    puntiAvulsa2 = giocatori[username].puntiAvulsa + giocatori[username].avversarioCorrezioni[settimana][index2];
+
+                //Controllo punti avulsa
+                if (puntiAvulsa1 > puntiAvulsa2) {
                     trovato = true;
-                } else if (giocatori[i].punti[settimana] == max ) {
+                } else if (puntiAvulsa1 == puntiAvulsa2 ) {  
                     //Controllo scontri diretti
-                    var diretti1 = 0;
-                    var index = giocatori[i].avversario[settimana].indexOf(username)
-                    if (index == -1) {
-                        diretti1 = 0;
-                        direttiIndex1 = 999;
-                    } else {
-                        diretti1 = giocatori[i].avversarioPunti[settimana][index]   + giocatori[i].avversarioCorrezioni[settimana][index];
-                        direttiIndex1 = giocatori[i].avversarioIndex[settimana][index];
-                    }
-                    var diretti2 = 0;
-                    index = giocatori[username].avversario[settimana].indexOf(i)
-                    if (index == -1) {
-                        diretti2 = 0;
-                        direttiIndex2 = 999;
-                    } else {
-                        diretti2 = (giocatori[username].avversarioPunti[settimana][index])   + giocatori[username].avversarioCorrezioni[settimana][index];
-                        direttiIndex2 = giocatori[username].avversarioIndex[settimana][index];
-                    }
-                    if (diretti1 > diretti2) {
+                    if (index1 > -1)
+                        direttiIndex1 = giocatori[i].avversarioIndex[settimana][index1];
+                    if (index2 > -1)
+                        direttiIndex2 = giocatori[username].avversarioIndex[settimana][index2];
+                    if (direttiIndex1 > direttiIndex2) {
                         trovato = true;
-                    } else if (diretti1 == diretti2 ) {  
+                    } else if (direttiIndex1 == direttiIndex2 ) {  
                         //controllo chi ha vinto con più avversari
                         if (giocatori[i].avversario[settimana].length > giocatori[username].avversario[settimana].length) {
                             trovato = true;
@@ -222,6 +264,7 @@ function calcolaClassificaGiocatori(settimana)
                     }
                 }
             }
+
             //Ho trovato un giocatore
             if (trovato) {
                // posizione ++;
@@ -241,10 +284,7 @@ function calcolaClassificaGiocatori(settimana)
         }
     }
 
-    //Calcolo classifica generale
-    calcolaClassifica();
-
-   
+  
  }
  
 function stampaGiocatore(settimana, username)
