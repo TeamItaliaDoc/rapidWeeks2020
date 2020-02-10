@@ -117,7 +117,13 @@
     {"settimana":1, "giorno":"7", "win":"ytoong", "lost":"dirkflasche"},
     
     {"settimana":2, "giorno":"1", "win":"cavaliereyedi", "lost":"ytoong"},
-        
+    {"settimana":2, "giorno":"1", "win":"cavaliereyedi", "lost":"lupo59"},
+    {"settimana":2, "giorno":"1", "win":"cavaliereyedi", "lost":"germy73"},
+    {"settimana":2, "giorno":"1", "win":"saurosol", "lost":"southitaly"},
+    {"settimana":2, "giorno":"1", "win":"litantrace", "lost":"themoonlightknight"},
+    {"settimana":2, "giorno":"1", "win":"kmoreteam", "lost":"ytoong"},
+    {"settimana":2, "giorno":"1", "win":"saurosol", "lost":"litantrace"},
+                
     {"settimana":1, "win":"", "lost":""}  
 ],
 "generale":[
