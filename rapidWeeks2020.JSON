@@ -137,7 +137,10 @@
     {"settimana":2, "giorno":"1", "win":"tulpicanistan", "lost":"sandro2116"},
     {"settimana":2, "giorno":"1", "win":"ytoong", "lost":"dirkflasche"},
     {"settimana":2, "giorno":"1", "win":"sandro2116", "lost":"tulpicanistan"},
-    {"settimana":2, "giorno":"1", "win":"dirkflasche", "lost":"babilonia"},    
+    {"settimana":2, "giorno":"1", "win":"dirkflasche", "lost":"babilonia"},
+        
+    {"settimana":2, "giorno":"2", "win":"cavaliereyedi", "lost":"enithith"},
+    {"settimana":2, "giorno":"2", "win":"cavaliereyedi", "lost":"pantheon-67"},      
                     
     {"settimana":1, "win":"", "lost":""}  
 ],
