@@ -195,7 +195,6 @@ function calcolaClassificaGiocatori(settimana)
             if ((giocatori[i].generale.posizione == 0) && (giocatori[i].punti[settimana] > 0) && (giocatori[i].punti[settimana] > max )) {
                 max = giocatori[i].punti[settimana];
 
-                console.log('nuovo max ' + max + ' - ' + i)
             }
         }
         //Se il massimo è 0 non devo più stampare niente, esco
@@ -205,7 +204,6 @@ function calcolaClassificaGiocatori(settimana)
         //Calcolo classifica avulsa per chi ha il punteggio massimo
         for (var i in giocatori)
         {
-            console.log('--------  Punti avulsa inizio calcolo ' + max);
             if (giocatori[i].punti[settimana] == max){
                 for (var iAvversario in giocatori) {
                     if ((giocatori[iAvversario].punti[settimana] == max) && (i != iAvversario)){
@@ -215,9 +213,7 @@ function calcolaClassificaGiocatori(settimana)
                     }
                 }
 
-                console.log('-- Punti avulsa ' + i + ': ' + giocatori[i].puntiAvulsa);
             }
-            console.log('--------  Punti avulsa fine  calcolo ' + max);
         }
 
         max = -1;
