@@ -160,6 +160,15 @@
     {"settimana":2, "giorno":"2", "win":"dirkflasche", "lost":"tulpicanistan"},
     {"settimana":2, "giorno":"2", "win":"dirkflasche", "lost":"sandro2116"},
     {"settimana":2, "giorno":"2", "win":"vittoriagiuseppe", "lost":"kmoreteam"},
+        
+    {"settimana":2, "giorno":"3", "win":"cavaliereyedi", "lost":"dirkflasche"},
+    {"settimana":2, "giorno":"3", "win":"cavaliereyedi", "lost":"ytoong"},
+    {"settimana":2, "giorno":"3", "win":"tulpicanistan", "lost":"carbon"},
+    {"settimana":2, "giorno":"3", "win":"dirkflasche", "lost":"cavaliereyedi"},
+    {"settimana":2, "giorno":"3", "win":"sandro", "lost":"litantrace"},
+    {"settimana":2, "giorno":"3", "win":"cavaliereyedi", "lost":"nick_940"},
+    {"settimana":2, "giorno":"3", "win":"tulpicanistan", "lost":"litantrace"},
+    {"settimana":2, "giorno":"3", "win":"tulpicanistan", "lost":"vitellotonnato"},
     
     {"settimana":1, "win":"", "lost":""}  
 ],
