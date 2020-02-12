@@ -165,7 +165,7 @@
     {"settimana":2, "giorno":"3", "win":"cavaliereyedi", "lost":"ytoong"},
     {"settimana":2, "giorno":"3", "win":"tulpicanistan", "lost":"carbon"},
     {"settimana":2, "giorno":"3", "win":"dirkflasche", "lost":"cavaliereyedi"},
-    {"settimana":2, "giorno":"3", "win":"sandro", "lost":"litantrace"},
+    {"settimana":2, "giorno":"3", "win":"sandro2116", "lost":"litantrace"},
     {"settimana":2, "giorno":"3", "win":"cavaliereyedi", "lost":"nick_940"},
     {"settimana":2, "giorno":"3", "win":"tulpicanistan", "lost":"litantrace"},
     {"settimana":2, "giorno":"3", "win":"tulpicanistan", "lost":"vitellotonnato"},
@@ -173,6 +173,8 @@
     {"settimana":2, "giorno":"3", "win":"saurosol", "lost":"silverblack"},
     {"settimana":2, "giorno":"3", "win":"dirkflasche", "lost":"babilonia"},
     {"settimana":2, "giorno":"3", "win":"tulpicanistan", "lost":"cavaliereyedi"},
+    {"settimana":2, "giorno":"3", "win":"dirkflasche", "lost":"babilonia"},
+    {"settimana":2, "giorno":"3", "win":"themoonlightknight", "lost":"sandro2116"},
     
     {"settimana":1, "win":"", "lost":""}  
 ],
