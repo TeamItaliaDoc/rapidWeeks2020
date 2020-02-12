@@ -194,6 +194,8 @@ function calcolaClassificaGiocatori(settimana)
 
             if ((giocatori[i].generale.posizione == 0) && (giocatori[i].punti[settimana] > 0) && (giocatori[i].punti[settimana] > max )) {
                 max = giocatori[i].punti[settimana];
+
+                console.log('nuovo max ' + max + ' - ' + i)
             }
         }
         //Se il massimo è 0 non devo più stampare niente, esco
@@ -203,6 +205,7 @@ function calcolaClassificaGiocatori(settimana)
         //Calcolo classifica avulsa per chi ha il punteggio massimo
         for (var i in giocatori)
         {
+            console.log('--------  Punti avulsa inizio calcolo ' + max);
             if (giocatori[i].punti[settimana] == max){
                 for (var iAvversario in giocatori) {
                     if ((giocatori[iAvversario].punti[settimana] == max) && (i != iAvversario)){
@@ -211,7 +214,10 @@ function calcolaClassificaGiocatori(settimana)
                             giocatori[i].puntiAvulsa += giocatori[i].avversarioPunti[settimana][index];
                     }
                 }
+
+                console.log('-- Punti avulsa ' + i + ': ' + giocatori[i].puntiAvulsa);
             }
+            console.log('--------  Punti avulsa fine  calcolo ' + max);
         }
 
         max = -1;
@@ -231,22 +237,18 @@ function calcolaClassificaGiocatori(settimana)
                 //Punteggio uguale
 
                 //Classifica tra quelli con stesso punteggio (puntiAvulsa)  
-                var puntiAvulsa1 = 0;
-                var puntiAvulsa2 = 0;
-                var index1 = giocatori[i].avversario[settimana].indexOf(username);
-                if (index1 > -1)
-                    puntiAvulsa1 = giocatori[i].puntiAvulsa  + giocatori[i].avversarioCorrezioni[settimana][index1];
-                var index2 = giocatori[username].avversario[settimana].indexOf(i);
-                if (index2 > -1)
-                    puntiAvulsa2 = giocatori[username].puntiAvulsa + giocatori[username].avversarioCorrezioni[settimana][index2];
+                var puntiAvulsa1 = giocatori[i].puntiAvulsa;
+                var puntiAvulsa2 = giocatori[username].puntiAvulsa;
 
                 //Controllo punti avulsa
                 if (puntiAvulsa1 > puntiAvulsa2) {
                     trovato = true;
                 } else if (puntiAvulsa1 == puntiAvulsa2 ) {  
                     //Controllo scontri diretti
+                    var index1 = giocatori[i].avversario[settimana].indexOf(username);
                     if (index1 > -1)
                         direttiIndex1 = giocatori[i].avversarioIndex[settimana][index1];
+                    var index2 = giocatori[username].avversario[settimana].indexOf(i);
                     if (index2 > -1)
                         direttiIndex2 = giocatori[username].avversarioIndex[settimana][index2];
                     if (direttiIndex1 > direttiIndex2) {
