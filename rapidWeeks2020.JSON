@@ -174,7 +174,9 @@
     {"settimana":2, "giorno":"3", "win":"dirkflasche", "lost":"babilonia"},
     {"settimana":2, "giorno":"3", "win":"dirkflasche", "lost":"babilonia"},
     {"settimana":2, "giorno":"3", "win":"themoonlightknight", "lost":"sandro2116"},
-        {"settimana":2, "giorno":"3", "win":"saurosol", "lost":"kmoreteam"},
+    {"settimana":2, "giorno":"3", "win":"saurosol", "lost":"kmoreteam"},
+    {"settimana":2, "giorno":"3", "win":"saurosol", "lost":"enithith"},
+    {"settimana":2, "giorno":"3", "win":"kmoreteam", "lost":"carmine2017"},
     
     {"settimana":1, "win":"", "lost":""}  
 ],
