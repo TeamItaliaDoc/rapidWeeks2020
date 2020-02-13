@@ -195,6 +195,7 @@
     {"settimana":2, "giorno":"4", "win":"saurosol", "lost":"tulpicanistan"},
     {"settimana":2, "giorno":"4", "win":"tulpicanistan", "lost":"saurosol"},
     {"settimana":2, "giorno":"4", "win":"tulpicanistan", "lost":"kmoreteam"},
+    {"settimana":2, "giorno":"4", "win":"fulljoker", "lost":"tulpicanistan"},
         
     {"settimana":1, "win":"", "lost":""}  
 ],
