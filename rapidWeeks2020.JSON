@@ -178,7 +178,23 @@
     {"settimana":2, "giorno":"3", "win":"kmoreteam", "lost":"carmine2017"},
     {"settimana":2, "giorno":"3", "win":"dirkflasche", "lost":"ytoong"},
     {"settimana":2, "giorno":"3", "win":"kmoreteam", "lost":"sandro2116"},
-    
+        
+    {"settimana":2, "giorno":"4", "win":"kmoreteam", "lost":"sandro2116"},
+    {"settimana":2, "giorno":"4", "win":"babilonia", "lost":"southitaly"},
+    {"settimana":2, "giorno":"4", "win":"cavaliereyedi", "lost":"dirkflasche"},
+    {"settimana":2, "giorno":"4", "win":"dirkflasche", "lost":"cavaliereyedi"},
+    {"settimana":2, "giorno":"4", "win":"rescorpio", "lost":"kmoreteam"},
+    {"settimana":2, "giorno":"4", "win":"babilonia", "lost":"themoonlightknight"},
+    {"settimana":2, "giorno":"4", "win":"cavaliereyedi", "lost":"babilonia"},
+    {"settimana":2, "giorno":"4", "win":"dirkflasche", "lost":"andrea71ra"},
+    {"settimana":2, "giorno":"4", "win":"enithith", "lost":"kmoreteam"},    
+    {"settimana":2, "giorno":"4", "win":"sandro2116", "lost":"tulpicanistan"},
+    {"settimana":2, "giorno":"4", "win":"dirkflasche", "lost":"enithith"},
+    {"settimana":2, "giorno":"4", "win":"carmine2017", "lost":"kmoreteam"},
+    {"settimana":2, "giorno":"4", "win":"kmoreteam", "lost":"carmine2017"},
+    {"settimana":2, "giorno":"4", "win":"saurosol", "lost":"tulpicanistan"},
+    {"settimana":2, "giorno":"4", "win":"tulpicanistan", "lost":"saurosol"},        
+        
     {"settimana":1, "win":"", "lost":""}  
 ],
 "generale":[
