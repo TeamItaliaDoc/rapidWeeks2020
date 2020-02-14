@@ -198,6 +198,13 @@
     {"settimana":2, "giorno":"4", "win":"fulljoker", "lost":"tulpicanistan"},
     {"settimana":2, "giorno":"4", "win":"cavaliereyedi", "lost":"warnefrit"},
         
+    {"settimana":2, "giorno":"5", "win":"cavaliereyedi", "lost":"sundacek"},
+    {"settimana":2, "giorno":"5", "win":"rescorpio", "lost":"cavaliereyedi"},
+    {"settimana":2, "giorno":"5", "win":"cavaliereyedi", "lost":"rescorpio"},
+    {"settimana":2, "giorno":"5", "win":"tulpicanistan", "lost":"cavaliereyedi"},
+    {"settimana":2, "giorno":"5", "win":"kmoreteam", "lost":"litantrace"},
+    {"settimana":2, "giorno":"5", "win":"tulpicanistan", "lost":"babilonia"},
+        
     {"settimana":1, "win":"", "lost":""}  
 ],
 "generale":[
