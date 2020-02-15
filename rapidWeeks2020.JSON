@@ -218,6 +218,7 @@
     {"settimana":2, "giorno":"6", "win":"kmoreteam", "lost":"rescorpio"},
     {"settimana":2, "giorno":"6", "win":"cavaliereyedi", "lost":"enithith"},
     {"settimana":2, "giorno":"6", "win":"cavaliereyedi", "lost":"kmoreteam"},
+    {"settimana":2, "giorno":"6", "win":"kmoreteam", "lost":"fiz2"},
         
     {"settimana":1, "win":"", "lost":""}  
 ],
