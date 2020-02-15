@@ -209,6 +209,16 @@
     {"settimana":2, "giorno":"5", "win":"kmoreteam", "lost":"carmine2017"},
     {"settimana":2, "giorno":"5", "win":"dirkflasche", "lost":"ytoong"},
         
+    {"settimana":2, "giorno":"6", "win":"tulpicanistan", "lost":"kmoreteam"},
+    {"settimana":2, "giorno":"6", "win":"saurosol", "lost":"enithith"},
+    {"settimana":2, "giorno":"6", "win":"saurosol", "lost":"rescorpio"},
+    {"settimana":2, "giorno":"6", "win":"cavaliereyedi", "lost":"tulpicanistan"},
+    {"settimana":2, "giorno":"6", "win":"tulpicanistan", "lost":"fessura92"},
+    {"settimana":2, "giorno":"6", "win":"tulpicanistan", "lost":"rescorpio"},
+    {"settimana":2, "giorno":"6", "win":"kmoreteam", "lost":"rescorpio"},
+    {"settimana":2, "giorno":"6", "win":"cavaliereyedi", "lost":"enithith"},
+    {"settimana":2, "giorno":"6", "win":"cavaliereyedi", "lost":"kmoreteam"},
+        
     {"settimana":1, "win":"", "lost":""}  
 ],
 "generale":[
