@@ -119,6 +119,7 @@ function creaGiocatore(apiUsername) {
     giocatori[username].avversarioPunti = [];
     giocatori[username].avversarioIndex = [];
     giocatori[username].avversarioCorrezioni = [];
+    giocatori[username].primaPartita = [];
     giocatori[username].posizione = [];
     giocatori[username].generale = {};
     giocatori[username].generale.posizione = 0;
@@ -130,6 +131,7 @@ function creaGiocatore(apiUsername) {
         giocatori[username].avversarioPunti[settimana] = [];
         giocatori[username].avversarioCorrezioni[settimana] = [];
         giocatori[username].avversarioIndex[settimana] = [];
+        giocatori[username].primaPartita[settimana] = 0;
         giocatori[username].generale.partite.push(0);
     }
 }
@@ -151,6 +153,11 @@ function setPunti(settimana, username, avversario, iMatch)
     //Assegno punti
     giocatori[username].punti[settimana] ++;
 
+    //Se è la prima partita della settimana la salvo
+    if (!giocatori[username].primaPartita[settimana]) {
+        giocatori[username].primaPartita[settimana] = iMatch;
+    }
+    
     //Segno avversari settimana
     var index = giocatori[username].avversario[settimana].indexOf(avversario)
     if (index == -1){
@@ -240,6 +247,7 @@ function calcolaClassificaGiocatori(settimana)
                 if (puntiAvulsa1 > puntiAvulsa2) {
                     trovato = true;
                 } else if (puntiAvulsa1 == puntiAvulsa2 ) {  
+                    /* scontri diretti è la classifica avulsa
                     //Controllo scontri diretti
                     var index1 = giocatori[i].avversario[settimana].indexOf(username);
                     if (index1 > -1)
@@ -249,16 +257,16 @@ function calcolaClassificaGiocatori(settimana)
                         direttiIndex2 = giocatori[username].avversarioIndex[settimana][index2];
                     if (direttiIndex1 > direttiIndex2) {
                         trovato = true;
-                    } else if (direttiIndex1 == direttiIndex2 ) {  
+                    } else if (direttiIndex1 == direttiIndex2 ) {  */
                         //controllo chi ha vinto con più avversari
                         if (giocatori[i].avversario[settimana].length > giocatori[username].avversario[settimana].length) {
                             trovato = true;
                         }  else if (giocatori[i].avversario[settimana].length == giocatori[username].avversario[settimana].length) {
                             //Controllo chi ha vinto la prima partita
-                            if (direttiIndex1 < direttiIndex2) {
+                            if (giocatori[i].primaPartita[settimana] < giocatori[username].primaPartita[settimana]) {
                                 trovato = true;
                             }
-                        }
+                        //}  scontri diretti è la classifica avulsa
                     }
                 }
             }
