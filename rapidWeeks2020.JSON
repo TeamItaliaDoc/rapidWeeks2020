@@ -239,6 +239,9 @@
     {"settimana":2, "giorno":"7", "win":"saurosol", "lost":"tulpicanistan"},
     {"settimana":2, "giorno":"7", "win":"tulpicanistan", "lost":"saurosol"},
     {"settimana":2, "giorno":"7", "win":"cavaliereyedi", "lost":"babilonia"},
+    {"settimana":2, "giorno":"7", "win":"enithith", "lost":"ytoong"},
+    {"settimana":2, "giorno":"7", "win":"enithith", "lost":"cavaliereyedi"},
+    {"settimana":2, "giorno":"7", "win":"cherokee751", "lost":"kmoreteam"},    
          
     {"settimana":1, "win":"", "lost":""}  
 ],
