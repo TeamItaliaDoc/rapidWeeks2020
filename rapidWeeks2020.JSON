@@ -241,7 +241,9 @@
     {"settimana":2, "giorno":"7", "win":"cavaliereyedi", "lost":"babilonia"},
     {"settimana":2, "giorno":"7", "win":"enithith", "lost":"ytoong"},
     {"settimana":2, "giorno":"7", "win":"enithith", "lost":"cavaliereyedi"},
-    {"settimana":2, "giorno":"7", "win":"cherokee751", "lost":"kmoreteam"},    
+    {"settimana":2, "giorno":"7", "win":"cherokee751", "lost":"kmoreteam"},
+    {"settimana":2, "giorno":"7", "win":"sandro2116", "lost":"litantrace"},
+    {"settimana":2, "giorno":"7", "win":"cherokee751", "lost":"tulpicanistan"},
          
     {"settimana":1, "win":"", "lost":""}  
 ],
