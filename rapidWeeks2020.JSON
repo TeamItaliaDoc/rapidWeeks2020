@@ -265,7 +265,8 @@
     {"settimana":3, "giorno":"1", "win":"kmoreteam", "lost":"babilonia"},
     {"settimana":3, "giorno":"1", "win":"ytoong", "lost":"enithith"},
     {"settimana":3, "giorno":"1", "win":"dirkflasche", "lost":"babilonia"},
-        
+    {"settimana":3, "giorno":"1", "win":"dirkflasche", "lost":"warnerfrit"},
+
     {"settimana":3, "giorno":"2", "win":"dirkflasche", "lost":"warnerfrit"},
     {"settimana":3, "giorno":"2", "win":"dirkflasche", "lost":"cavaliereyedi"},
             
