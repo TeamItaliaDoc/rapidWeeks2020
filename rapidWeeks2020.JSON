@@ -282,7 +282,9 @@
     {"settimana":3, "giorno":"2", "win":"tulpicanistan", "lost":"cherokee751"},
     {"settimana":3, "giorno":"2", "win":"kmoreteam", "lost":"warnefrit"},
     {"settimana":3, "giorno":"2", "win":"cherokee751", "lost":"themoonlightknight"},
-    {"settimana":3, "giorno":"2", "win":"cherokee751", "lost":"warnefrit"},
+    {"settimana":3, "giorno":"2", "win":"warnefrit", "lost":"kmoreteam"},
+    {"settimana":3, "giorno":"2", "win":"babilonia", "lost":"warnefrit"},
+    {"settimana":3, "giorno":"2", "win":"saurosol", "lost":"babilonia"},
             
     {"settimana":1, "win":"", "lost":""}  
 ],
