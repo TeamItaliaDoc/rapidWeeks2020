@@ -278,7 +278,6 @@
     {"settimana":3, "giorno":"2", "win":"cherokee751", "lost":"ytoong"}, 
     {"settimana":3, "giorno":"2", "win":"tulpicanistan", "lost":"saurosol"},
     {"settimana":3, "giorno":"2", "win":"enithith", "lost":"kmoreteam"},
-    {"settimana":3, "giorno":"2", "win":"enithith", "lost":"ytoong"},
     {"settimana":3, "giorno":"2", "win":"cherokee751", "lost":"tulpicanistan"},
     {"settimana":3, "giorno":"2", "win":"tulpicanistan", "lost":"cherokee751"},
     {"settimana":3, "giorno":"2", "win":"kmoreteam", "lost":"warnefrit"},
@@ -288,6 +287,7 @@
     {"settimana":3, "giorno":"2", "win":"saurosol", "lost":"babilonia"},
     {"settimana":3, "giorno":"2", "win":"sandro2116", "lost":"babilonia"},
     {"settimana":3, "giorno":"2", "win":"dirkflasche", "lost":"cherokee751"},
+    {"settimana":3, "giorno":"2", "win":"enithith", "lost":"ytoong"},
         
     {"settimana":3, "giorno":"3", "win":"dirkflasche", "lost":"enithith"},
     {"settimana":3, "giorno":"3", "win":"saurosol", "lost":"tulpicanistan"},
@@ -296,6 +296,14 @@
     {"settimana":3, "giorno":"3", "win":"tulpicanistan", "lost":"cavaliereyedi"},
     {"settimana":3, "giorno":"3", "win":"enithith", "lost":"cherokee751"},
     {"settimana":3, "giorno":"3", "win":"enithith", "lost":"tulpicanistan"},
+    {"settimana":3, "giorno":"3", "win":"cavaliereyedi", "lost":"litantrace"},
+    {"settimana":3, "giorno":"3", "win":"tulpicanistan", "lost":"enithit"},
+    {"settimana":3, "giorno":"3", "win":"cavaliereyedi", "lost":"babilonia"},
+    {"settimana":3, "giorno":"3", "win":"babilonia", "lost":"cavaliereyedi"},
+    {"settimana":3, "giorno":"3", "win":"dirkflasche", "lost":"cavaliereyedi"},
+    {"settimana":3, "giorno":"3", "win":"babilonia", "lost":"kmoreteam"},
+    {"settimana":3, "giorno":"3", "win":"dirkflasche", "lost":"ytoong"},
+    {"settimana":3, "giorno":"3", "win":"ytoong", "lost":"dirkflasche"},
             
     {"settimana":1, "win":"", "lost":""}  
 ],
