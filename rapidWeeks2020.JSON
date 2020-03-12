@@ -311,18 +311,8 @@
     {"settimana":3, "giorno":"3", "win":"andrea16174", "lost":"kmoreteam"},
     {"settimana":3, "giorno":"3", "win":"cherokee751", "lost":"andrea16174"},
     {"settimana":3, "giorno":"3", "win":"kmoreteam", "lost":"litantrace"},
-    {"settimana":3, "giorno":"3", "win":"southitaly", "lost":"warnefrit"},
-        
-    {"settimana":3, "giorno":"4", "win":"dirkflasche", "lost":"litantrace"},
-    {"settimana":3, "giorno":"4", "win":"cavaliereyedi", "lost":"ytoong"}, 
-    {"settimana":3, "giorno":"4", "win":"tulpicanistan", "lost":"enithith"},
-    {"settimana":3, "giorno":"4", "win":"cavaliereyedi", "lost":"pantheon67"}, 
-    {"settimana":3, "giorno":"4", "win":"tulpicanistan", "lost":"cavaliereyedi"}, 
-    {"settimana":3, "giorno":"4", "win":"ytoong", "lost":"tulpicanistan"}, 
-    {"settimana":3, "giorno":"4", "win":"enithith", "lost":"cavaliereyedi"},
-    {"settimana":3, "giorno":"4", "win":"enithith", "lost":"tulpicanistan"}, 
-    {"settimana":3, "giorno":"4", "win":"cavaliereyedi", "lost":"enithith"},
-                                    
+    {"settimana":3, "giorno":"3", "win":"southitaly", "lost":"warnefrit"},        
+                                      
     {"settimana":1, "win":"", "lost":""}  
 ],
 "generale":[
