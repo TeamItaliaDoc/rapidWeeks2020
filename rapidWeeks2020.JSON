@@ -313,9 +313,7 @@
     {"settimana":3, "giorno":"3", "win":"kmoreteam", "lost":"litantrace"},
     {"settimana":3, "giorno":"3", "win":"southitaly", "lost":"warnefrit"},
         
-    {"settimana":3, "giorno":"4", "win":"dirkflasche", "lost":"litantrace"},
-        {"settimana":3, "giorno":"4", "win":"cavaliereyedi", "lost":"ytoong"},
-        {"settimana":3, "giorno":"4", "win":"tulpicanistan", "lost":"enithith"},        
+    {"settimana":3, "giorno":"4", "win":"dirkflasche", "lost":"litantrace"},          
                                     
     {"settimana":1, "win":"", "lost":""}  
 ],
