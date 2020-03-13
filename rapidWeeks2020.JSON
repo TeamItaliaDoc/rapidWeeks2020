@@ -342,6 +342,7 @@
     {"settimana":10, "giorno":"5", "win":"kmoreteam", "lost":"marcellinov"},
     {"settimana":10, "giorno":"5", "win":"cavaliereyedi", "lost":"enithith"},
     {"settimana":10, "giorno":"5", "win":"abatichs", "lost":"kmoreteam"},
+    {"settimana":10, "giorno":"5", "win":"enithith", "lost":"marcellinov"},       
                                          
     {"settimana":1, "win":"", "lost":""}  
 ],
