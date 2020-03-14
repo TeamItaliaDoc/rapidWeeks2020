@@ -370,8 +370,9 @@
     {"settimana":3, "giorno":"6", "win":"kmoreteam", "lost":"themoonlightknight"},
     {"settimana":3, "giorno":"6", "win":"sandro2116", "lost":"cavaliereyedi"},
     {"settimana":3, "giorno":"6", "win":"enithith", "lost":"cherokee751"},
-    {"settimana":3, "giorno":"6", "win":"cherokee751", "lost":"enithith"},
-    {"settimana":3, "giorno":"6", "win":"cavaliereyedi", "lost":"88arf"},
+    {"settimana":3, "giorno":"6", "win":"cherokee751", "lost":"enithith"},    
+    {"settimana":3, "giorno":"6", "win":"tulpicanistan", "lost":"cherokee751"},
+    {"settimana":3, "giorno":"6", "win":"tulpicanistan", "lost":"litantrace"},
                                               
     {"settimana":1, "win":"", "lost":""}  
 ],
