@@ -374,8 +374,12 @@
     {"settimana":3, "giorno":"6", "win":"tulpicanistan", "lost":"cherokee751"},
     {"settimana":3, "giorno":"6", "win":"tulpicanistan", "lost":"litantrace"},
     {"settimana":3, "giorno":"6", "win":"cavaliereyedi", "lost":"88arf"},
-    {"settimana":3, "giorno":"5", "win":"babilonia", "lost":"cavaliereyedi"},
+    {"settimana":3, "giorno":"6", "win":"babilonia", "lost":"cavaliereyedi"},
     {"settimana":3, "giorno":"6", "win":"tulpicanistan", "lost":"southitaly"},
+        
+    {"settimana":3, "giorno":"7", "win":"tulpicanistan", "lost":"dirkflasche"},
+    {"settimana":3, "giorno":"7", "win":"kmoreteam", "lost":"tulpicanistan"},
+    {"settimana":3, "giorno":"7", "win":"tulpicanistan", "lost":"kmoreteam"},
                                               
     {"settimana":1, "win":"", "lost":""}  
 ],
