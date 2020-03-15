@@ -380,6 +380,14 @@
     {"settimana":3, "giorno":"7", "win":"tulpicanistan", "lost":"dirkflasche"},
     {"settimana":3, "giorno":"7", "win":"kmoreteam", "lost":"tulpicanistan"},
     {"settimana":3, "giorno":"7", "win":"tulpicanistan", "lost":"kmoreteam"},
+    {"settimana":3, "giorno":"7", "win":"southitaly", "lost":"tulpicanistan"},
+    {"settimana":3, "giorno":"7", "win":"kmoreteam", "lost":"southitaly"},
+    {"settimana":3, "giorno":"7", "win":"tulpicanistan", "lost":"cavaliereyedi"},
+    {"settimana":3, "giorno":"7", "win":"cavaliereyedi", "lost":"kmoreteam"},
+    {"settimana":3, "giorno":"7", "win":"cavaliereyedi", "lost":"gd1966"},
+    {"settimana":3, "giorno":"7", "win":"cherokee751", "lost":"enithith"},
+    {"settimana":3, "giorno":"7", "win":"kmoreteam", "lost":"enithith"},
+    {"settimana":3, "giorno":"7", "win":"enithith", "lost":"kmoreteam"},    
                                               
     {"settimana":1, "win":"", "lost":""}  
 ],
