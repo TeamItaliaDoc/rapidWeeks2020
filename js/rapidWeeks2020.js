@@ -9,8 +9,8 @@ var U1200 = true;
 
 function elabora() {
 
-//    var url = 'rapidWeeks2020Test.JSON';
-    var url = 'rapidWeeks2020.JSON';
+    //var url = 'rapidWeeks2020Test.JSON';
+      var url = 'rapidWeeks2020.JSON';
 
     $.getJSON(url,function(data){
 
@@ -212,6 +212,29 @@ function stampaGenerale(username)
 
     //Stampo
     $("#classificaGenerale").append(riga);
+
+    //Visualizzo settimane in html
+    $("#sepRW10").attr('style', '"display":"block"');
+    $("#RW10").attr('style', '"display":"block"');
+    $("#sepRW9").attr('style', '"display":"block"');
+    $("#RW9").attr('style', '"display":"block"');
+    $("#sepRW8").attr('style', '"display":"block"');
+    $("#RW8").attr('style', '"display":"block"');
+    $("#sepRW7").attr('style', '"display":"block"');
+    $("#RW7").attr('style', '"display":"block"');
+    $("#sepRW6").attr('style', '"display":"block"');
+    $("#RW6").attr('style', '"display":"block"');
+    $("#sepRW5").attr('style', '"display":"block"');
+    $("#RW5").attr('style', '"display":"block"');
+    $("#sepRW4").attr('style', '"display":"block"');
+    $("#RW4").attr('style', '"display":"block"');
+    $("#sepRW3").attr('style', '"display":"block"');
+    $("#RW3").attr('style', '"display":"block"');
+    $("#sepRW2").attr('style', '"display":"block"');
+    $("#RW2").attr('style', '"display":"block"');
+    $("#sepRW1").attr('style', '"display":"block"');
+    $("#RW1").attr('style', '"display":"block"');
+
 
 }
 
