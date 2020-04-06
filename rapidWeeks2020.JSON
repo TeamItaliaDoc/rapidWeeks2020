@@ -167,6 +167,7 @@
     {"settimana":4, "giorno":"1", "win":"kmoreteam", "lost":"litantrace"},
     {"settimana":4, "giorno":"1", "win":"southitaly", "lost":"kmoreteam"},
     {"settimana":4, "giorno":"1", "win":"ytoong", "lost":"tulpicanistan"},
+    {"settimana":4, "giorno":"1", "win":"tulpicanistan", "lost":"cavaliereyedi"},
                                               
     {"settimana":1, "win":"", "lost":""}  
 ],
