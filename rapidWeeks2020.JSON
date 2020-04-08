@@ -190,7 +190,14 @@
     {"settimana":4, "giorno":"3", "win":"tulpicanistan", "lost":"pantheon-67"},
     {"settimana":4, "giorno":"3", "win":"cavaliereyedi", "lost":"themoonlightknight"},
     {"settimana":4, "giorno":"3", "win":"cavaliereyedi", "lost":"andrea16174"},
-                                              
+    {"settimana":4, "giorno":"3", "win":"ytoong", "lost":"kmoreteam"},
+    {"settimana":4, "giorno":"3", "win":"kmoreteam", "lost":"ytoong"},    
+    {"settimana":4, "giorno":"3", "win":"kmoreteam", "lost":"ender_VII"},
+    {"settimana":4, "giorno":"3", "win":"ytoong", "lost":"cavaliereyedi"},
+    {"settimana":4, "giorno":"3", "win":"cavaliereyedi", "lost":"ytoong"},
+    {"settimana":4, "giorno":"3", "win":"kmoreteam", "lost":"babilonia"},  
+    {"settimana":4, "giorno":"3", "win":"tulpicanistan", "lost":"themoonlightknight"},
+        
     {"settimana":1, "win":"", "lost":""}  
 ],
 "generale":[
