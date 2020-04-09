@@ -201,6 +201,12 @@
     {"settimana":4, "giorno":"3", "win":"tulpicanistan", "lost":"cats-not-knights"},
     {"settimana":4, "giorno":"3", "win":"cherokee751", "lost":"tulpicanistan"},
     {"settimana":4, "giorno":"3", "win":"ytoong", "lost":"cats-not-knights"},
+        
+    {"settimana":4, "giorno":"4", "win":"kmoreteam", "lost":"germy73"},
+    {"settimana":4, "giorno":"4", "win":"kmoreteam", "lost":"laisasaki"},
+    {"settimana":4, "giorno":"4", "win":"kmoreteam", "lost":"matgian"},
+    {"settimana":4, "giorno":"4", "win":"babilonia", "lost":"enithith"},
+    {"settimana":4, "giorno":"4", "win":"ytoong", "lost":"kmoreteam"},        
             
     {"settimana":1, "win":"", "lost":""}  
 ],
