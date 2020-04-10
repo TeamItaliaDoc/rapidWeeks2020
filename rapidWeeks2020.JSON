@@ -229,6 +229,9 @@
     {"settimana":4, "giorno":"5", "win":"kmoreteam", "lost":"babilonia"},
     {"settimana":4, "giorno":"5", "win":"kmoreteam", "lost":"sundancek"},
     {"settimana":4, "giorno":"5", "win":"kmoreteam", "lost":"carmine2017"},
+    {"settimana":4, "giorno":"5", "win":"cherokee751", "lost":"cavaliereyedi"},
+    {"settimana":4, "giorno":"5", "win":"ytoong", "lost":"cherokee751"},
+    {"settimana":4, "giorno":"5", "win":"cherokee751", "lost":"ytoong"},
             
     {"settimana":1, "win":"", "lost":""}  
 ],
