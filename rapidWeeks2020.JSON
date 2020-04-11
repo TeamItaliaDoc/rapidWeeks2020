@@ -240,6 +240,9 @@
     {"settimana":4, "giorno":"6", "win":"cavaliereyedi", "lost":"germy73"},
     {"settimana":4, "giorno":"6", "win":"cavaliereyedi", "lost":"sandro2116"},
     {"settimana":4, "giorno":"6", "win":"cavaliereyedi", "lost":"babilonia"},
+    {"settimana":4, "giorno":"6", "win":"tulpicanistan", "lost":"cherokee751"},
+    {"settimana":4, "giorno":"6", "win":"tulpicanistan", "lost":"ytoong"},
+    {"settimana":4, "giorno":"6", "win":"ytoong", "lost":"tulpicanistan"},        
             
     {"settimana":1, "win":"", "lost":""}  
 ],
